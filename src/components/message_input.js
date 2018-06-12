@@ -7,11 +7,11 @@ class MessageInput extends Component {
     sendMessage(e) {
         e.preventDefault();
 
-        console.log('Message:', this.props.message);
+        const {message, roomId, clearInput} = this.props;
 
-        sendMessageToDatabase(this.props.message);
+        sendMessageToDatabase(roomId, message);
 
-        this.props.clearInput('message');
+        clearInput('message');
     }
 
     updateMessage(e) {
